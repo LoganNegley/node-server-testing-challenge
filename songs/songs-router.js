@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const db = require('../data/db.config.js')
 
-const db = require('../songs/songs-model');
+const Songs = require('../songs/songs-model');
 
 router.get('/', (req,res) =>{
-    db.getAll()
+    Songs.getAll()
     .then(songs =>{
         res.status(200).json(songs)
     })
