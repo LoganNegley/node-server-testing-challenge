@@ -1,10 +1,10 @@
 const express = require('express');
-const UsersRouter = require('../users/usersRouter');
+const SongsRouter = require('../songs/songs-router');
 
 const server = express();
 
 server.use(express.json());
-server.use('/api/users', UsersRouter);
+server.use('/api/songs', SongsRouter);
 
 server.get('/', (req,res) =>{
     res.json({
